@@ -1,0 +1,12 @@
+<div id='myDiv'></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
+
+<script>
+  const socket = io('http://localhost:4000');
+  socket.emit('invoice', 'user2')
+
+  socket.on('invoice', data => {
+    document.getElementById('myDiv').innerHTML = data
+  })
+</script>
